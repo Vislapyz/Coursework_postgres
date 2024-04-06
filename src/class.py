@@ -11,6 +11,7 @@ class Employer:
         self.employer_vacancies = employer_vacancies
         self.employer_url = employer_url
 
+    @classmethod
     def initiate_from_hh(cls, em_ids: list):
         """Создает список с экземплярами класса по заданным параметрам"""
 
@@ -48,6 +49,7 @@ class Vacancy:
         self.currency = currency
         self.vacancy_url = vacancy_url
 
+    @classmethod
     def initiate_from_hh(cls, employer_id: str):
         """Создает список с экземплярами класса по заданным параметрам"""
 
