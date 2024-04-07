@@ -3,7 +3,7 @@ from config import EMPLOYERS_URL, VACANCIES_URL
 
 
 class Employer:
-    """Работодатели"""
+    """Класс работодателя"""
 
     def __init__(self, employer_id: str, employer_name: str, employer_vacancies: int, employer_url: str):
         self.employer_id = employer_id
@@ -31,7 +31,7 @@ class Employer:
 
 
 class Vacancy:
-    """Вакансии"""
+    """Класс вакансии"""
 
     def __init__(self,
                  employer_id: str,
@@ -73,12 +73,14 @@ class Vacancy:
             vacancies_list.append(vacancy)
         return vacancies_list
 
+    @staticmethod
     def validate_salary_from(salary):
         """Возвращает 0 если не указана минимальная зарплата"""
         if not salary:
             return 0
         return salary
 
+    @staticmethod
     def validate_salary_to(salary_from, salary_to):
         """Возвращает максимальную зарплату равную минимальной, если максимальная не указана"""
 
